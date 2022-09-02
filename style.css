@@ -348,14 +348,16 @@ template {
   display: none;
 }
 
+
 body{
-  background-color: #e2eef6;
-  -webkit-transition: background-color 5s linear;
-  -moz-transition: background-color 5s linear;
-  -ms-transition: background-color 5s linear;
-  -o-transition: background-color 5s linear;
-  transition: background-color 5s linear;
+  background-color: #111;
+  -webkit-transition: background-color 3s linear;
+  -moz-transition: background-color 3s linear;
+  -ms-transition: background-color 3s linear;
+  -o-transition: background-color 3s linear;
+  transition: background-color 3s linear;
 }
+
 
 
 #logo{
@@ -364,4 +366,86 @@ body{
 }
 #logo img{
   width: 100px;
+}
+
+#bodywrapper{
+  padding-top:5vh;
+}
+#bodywrapper .archiveday img{
+  max-width: 100%;
+}
+
+.subtitle{
+  font-size: 11px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+
+}
+
+#menu{
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  align-content: space-between;
+  padding: 20px;
+}
+#menu div{
+  padding:0 20px;
+}
+
+#menu a{
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  text-decoration: underline;
+}
+
+#menu .live a, #menu .live{
+  color: #f30;
+}
+
+.liveanimated{
+  animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+  0% { color: #f30; }
+  50% { color: white; }
+  100% { color: #f30; }
+}
+
+
+#menu .active{
+  text-decoration: none;
+}
+
+
+
+#abouttext{
+  max-width: 600px;
+  padding: 20px 30pxs;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+
+}
+
+#abouttext p{
+  font-size: 16px;
+}
+
+
+#abouttext h4{
+  font-size: 18px;
+}
+#abouttext a{
+    color: rgb(243, 199, 53);
 }

@@ -1,33 +1,39 @@
 <html>
-	<head>
-		<meta charset="UTF-8"> 
-		<meta name="viewport" content="width=320, initial-scale=1">
-		<title>Himmel über Karlsruhe </title>
-		<link type="text/css" rel="stylesheet" media="all" href="style.css" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
-		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-		<script>
-			var interval = 15000;
-			function getColor() {
-				$.ajax({
-					type: 'GET',
-					url: 'https://api.himmelueberkarlsruhe.de/last',
-					data: $(this).serialize(),
-					dataType: 'json',
-					success: function (data) {
-						$(document.body).css( "background-color", data.rgbhex );
-					},
-					complete: function (data) {
-						setTimeout(getColor, interval);
-					}
-				});
-			}
-			getColor();
-		</script>
-	</head>
-	<body>
-		<div id="logo">
-		<img src="logo.png">
-	</body>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=320, initial-scale=1">
+  <title>Himmel über Karlsruhe </title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+    var interval = 15000;
+    function getColor() {
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.himmelueberkarlsruhe.de/last',
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+          $(document.body).css( "background-color", data.naivecolor );
+        },
+        complete: function (data) {
+          setTimeout(getColor, interval);
+        }
+      });
+    }
+    getColor();
+  </script>
+</head>
+<body>
+  
+   <div id="logo">
+    <img src="logo.png">
+   </div>
+   <div id="menu">
+    <div class="liveanimated active">• Live</div>
+    <div class=""><a href="archive.html">Archiv</a></div> 
+    <div><a href="about.html">Über das Projekt</a></div>
+   </div>
+</body>
 </html>
-

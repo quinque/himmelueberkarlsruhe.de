@@ -1,0 +1,91 @@
+<html>
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=320, initial-scale=1">
+  <title>Himmel über Karlsruhe </title>
+  <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+    var interval = 15000;
+    function getColor() {
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.himmelueberkarlsruhe.de/last',
+        data: $(this).serialize(),
+        dataType: 'json',
+        success: function (data) {
+          $(document.body).css( "background-color", data.naivecolor );
+        },
+        complete: function (data) {
+          setTimeout(getColor, interval);
+        }
+      });
+    }
+    getColor();
+  </script>
+</head>
+<body>
+  
+   <div id="logo">
+    <img src="logo.png">
+   </div>
+
+   <div id="menu">
+    <div class="liveanimated">• <a href="index.html">Live</a></div>
+    <div ><a href="archive.html">Archiv</a></div> 
+    <div class="active">Über das Projekt</div>
+   </div>
+
+   <div id="bodywrapper" >
+    <div id="abouttext" >
+
+
+      <p>Eine kleine 1-Pixel-Kamera misst die Farbe des Himmels über Karlsruhe
+        und überträgt die Werte live auf die Webseite. Hier kann man immer sehen, wie 
+        der Himmel über Karlsruhe gerade ist.</p>
+
+
+       <h4> Warum?</h4>
+        <p>        Wenn wir etwas teilen, wenn wir im gleichen Raum sind,
+        dann ist es Licht. Gleiche Sonne, gleicher Himmel, gleiches 
+        Licht. Wir wollen immer mit unseren Freunden und unseren Familien
+        in Karlsruhe verbunden sein. Wir wollen mit der Stadt verbunden sein, 
+        wo auch immer wir sind.
+      </p>
+
+      <h4>Lichtarchiv</h4>
+      <p>Über Zeit sammeln sich die Lichtdaten und erzählen eindrucksvoll
+        von Gewittern, von bewölkten Tagen und von sonnigen, von frühen 
+        rosigen Sonnenaufgängen, von langen Sommertagen und kurzen Wintertagen.
+       <br>
+       Für das Archiv wird nicht nur ein einziger Lichtwert gespeichert, sondern ein 
+       ein-pixel-breiter Ausschnitt des Himmels in Süd-Nord-Richtung. 
+       Bei den entstandenen Bildern ist somit die X-Achse die Zeitachse, und die Y-Achse
+       die Nord-Süd-Achse des Himmels.
+    </p>
+
+     <p> Himmel über Karlsruhe ist ein Projekt von <a href="https://rybakov.com/">Michail Rybakov</a> und Petko Godev.</p>
+
+
+
+<h4>API</h4>
+<p>Der API-Endpoint für den aktuellen Licht-Farb-Wert ist hier verfügbar:
+https://api.himmelueberkarlsruhe.de/last
+</p>
+
+<h4>Code</h4>
+<p>Der Code für das Projekt - API, Webseite und Raspberry Pi Python script ist verfügbar im Github. </p>
+
+
+<p>Himmel &uuml;ber Karlsruhe wird unterst&uuml;tzt durch die <a href="http://cityofmediaarts.de/">UNESCO City of Media Arts Karlsruhe</a>
+  sowie durch die Stadt Karlsruhe.</p>
+<img src="karlsruhe.jpg" style="width: 15vw;max-width:200px;"><br>
+<img src="unesco.jpg" style="width: 15vw;max-width:200px;">
+
+
+</div>
+   </div>
+
+</body>
+</html>
