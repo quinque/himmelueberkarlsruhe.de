@@ -129,5 +129,6 @@ dmypy.json
 .pyre/
 
 # Custom stuff
+.DS_Store
 Makefile
 
