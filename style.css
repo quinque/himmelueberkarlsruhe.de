@@ -350,7 +350,7 @@ template {
 
 
 body{
-  background-color: #111;
+  background-color: #000;
   -webkit-transition: background-color 3s linear;
   -moz-transition: background-color 3s linear;
   -ms-transition: background-color 3s linear;
@@ -369,21 +369,34 @@ body{
 }
 
 #bodywrapper{
-  padding-top:5vh;
+  padding-top:12vh;
 }
 #bodywrapper .archiveday img{
   max-width: 100%;
 }
 
 .subtitle{
-  font-size: 11px;
+  font-size: 9px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #eee;
+  color: #555;
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-content: space-between;
+  margin-top: -14px;
+  line-height: 14px;
+  margin-left: 1em;
+}
 
+
+#time{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#time .subtitle{
+  color: #ddd;
 }
 
 #menu{
@@ -395,7 +408,7 @@ body{
   align-items: center;
   justify-content:center;
   align-content: space-between;
-  padding: 20px;
+padding: 24px 30px;
 }
 #menu div{
   padding:0 20px;
@@ -429,9 +442,10 @@ body{
 
 
 
+
 #abouttext{
   max-width: 600px;
-  padding: 20px 30pxs;
+  padding: 1.5em ;
   margin: auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
