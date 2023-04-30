@@ -16,6 +16,7 @@
         dataType: 'json',
         success: function (data) {
           $(document.body).css( "background-color", data.naivecolor );
+          createFavIcon('data.naivecolor');
         },
         complete: function (data) {
           setTimeout(getColor, interval);
@@ -23,6 +24,22 @@
       });
     }
     getColor();
+
+
+
+    const createFavIcon = (hexColor) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 16;
+      canvas.height = 16;
+      const context = canvas.getContext('2d');
+      context.fillStyle = hexColor;
+      context.fillRect(0, 0, 16, 16);
+      const link = document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = canvas.toDataURL('image/x-icon');
+      document.head.appendChild(link);
+    };
   </script>
 </head>
 <body>
