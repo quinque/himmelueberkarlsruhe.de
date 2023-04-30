@@ -436,12 +436,84 @@ padding: 24px 30px;
 }
 
 
-#menu .active{
+#menu .active, .btn .active{
   text-decoration: none;
 }
 
+header {
+  position: sticky;
+  left: 0%;
+  width: 380px;
+  margin: auto;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding-top: 1em;
+}
 
 
+.btn {
+  position: relative;
+  padding: .5em 1.5em;
+  height: 2.3em;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  border-radius: 5em;
+  overflow: hidden;
+/*  text-transform: uppercase;
+*/}
+
+.btn a{
+  color: #fff;
+  /*text-decoration: none;*/
+}
+
+
+.btn .blurred {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.blurred {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  border-radius: 5em;
+  z-index: -1;
+  margin: -1px;
+}
+
+.blurred {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5em;
+  padding: .25em;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
+}
+.btn .blurred::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
 #abouttext{
   max-width: 600px;
