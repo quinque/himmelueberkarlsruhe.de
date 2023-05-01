@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1">
+  <title>Archive | Himmel über Karlsruhe </title>
+  <link type="text/css" rel="stylesheet" media="all" href="/style.css" />
+  <link rel="shortcut icon" href="https://api.himmelueberkarlsruhe.de/last/svg" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="/player.js"></script>
+  <script>
+    var date = window.location.search.substring(1);
+    var skyplayer = new SkyPlayer();
+    //var interval = 15000;
+    //JSON.stringify
+    function getColors() {
+      $.ajax({
+        type: 'POST',
+        url: 'https://api.himmelueberkarlsruhe.de/search',
+        contentType: 'application/json',
+        data: '{"query": {"query_string": {"query": "description: \\"Mischa Treppenhaus\\" AND timestamp: ['+date+' TO '+date+']", "default_field": "content"}}, "size": 10000, "sort": [{"timestamp": {"order": "asc"}}]}',
+        dataType: 'json',
+        success: function (data) {
+          skyplayer.loadFrames(data);
+        },
+        complete: function (data) {
+          skyplayer.init($('#progress'));
+          skyplayer.play();
+        }
+      });
+    }
+    getColors();
+    $(window).on('load', function() {
+      $("#skyrecord").attr("src", "/skyrecords/"+date+"_photod.jpg");
+    });
+  </script>
+</head>
+<body class='archive'>
+   <div id="logo">
+    <img src="/logo.png">
+   </div>
+   <div id="menu">
+    <div class="liveanimated active">• Live</div>
+    <div class=""><a href="/archive.html">Archiv</a></div>
+    <div><a href="/about.html">Über das Projekt</a></div>
+   </div>
+   <div id='skyrecord-container' style='position: relative;'>
+     <div id='progress'></div>
+     <img id='skyrecord' style="height: 100px; width: 100%"/>
+     <div id='controls' class='subtitle'>
+       <a href='javascript:skyplayer.setDuration(1000*60*60*24);'>24 Stunden</a>
+       <a href='javascript:skyplayer.setDuration(1000*60*60);'>1 Stunde</a>
+       <a href='javascript:skyplayer.setDuration(1000*60);'>1 Minute</a>
+       <a href='javascript:skyplayer.setDuration(1000*30);'>30 Sekunden</a>
+     </div>
+   </div>
+</body>
+</html>
