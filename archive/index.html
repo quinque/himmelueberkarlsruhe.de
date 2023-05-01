@@ -53,15 +53,17 @@
         <div class="blurred"></div>
       </div>
    </header>
-   <div id='skyrecord-container' style='position: relative;'>
-     <div id='progress'></div>
-     <img id='skyrecord' style="height: 100px; width: 100%"/>
-     <div id='controls' class='subtitle'>
-       <a href='javascript:skyplayer.setDuration(1000*60*60*24);'>24 Stunden</a>
-       <a href='javascript:skyplayer.setDuration(1000*60*60);'>1 Stunde</a>
-       <a href='javascript:skyplayer.setDuration(1000*60);'>1 Minute</a>
-       <a href='javascript:skyplayer.setDuration(1000*30);'>30 Sekunden</a>
-     </div>
+   <div id='skyrecord-container'>
+      <div id="skyrecord-player">
+       <div id='progress'></div>
+       <img id='skyrecord'/>
+       <div id='controls' class='subtitle'>
+         <a href='javascript:skyplayer.setDuration(1000*60*60*24);'>24 Stunden</a>
+         <a href='javascript:skyplayer.setDuration(1000*60*60);'>1 Stunde</a>
+         <a href='javascript:skyplayer.setDuration(1000*60);'>1 Minute</a>
+         <a href='javascript:skyplayer.setDuration(1000*30);'>30 Sekunden</a>
+       </div>
+      </div>
    </div>
 </body>
 </html>
