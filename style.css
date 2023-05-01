@@ -535,6 +535,8 @@ header {
 
 #abouttext h4{
   font-size: 18px;
+  margin-top: 42px;
+
 }
 #abouttext a{
     color: rgb(243, 199, 53);
