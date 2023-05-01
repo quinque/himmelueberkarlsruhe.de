@@ -499,9 +499,13 @@ header {
   padding: .25em;
   text-align: center;
   position: relative;
-  background-color: rgba(0,0,0,.05);
+  /*background-color: rgba(0,0,0,.05);*/ 
+  background-color: transparent;
   display: flex;
   align-items: center;
+}
+.active .blurred{
+  background-color: transparent;
 }
 .btn .blurred::before {
   content: "";
